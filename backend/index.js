@@ -4,6 +4,7 @@ import express from "express";
 import { configDotenv } from "dotenv";
 import cookieParser from "cookie-parser";
 import userRoutes from "./routes/userRoutes.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
 
 //utilities
 import connectDB from "./config/db.js";
@@ -26,5 +27,6 @@ app.get("/", (req, res) => {
 
 //customized routes
 app.use("/api/users", userRoutes);
+app.use("/api/category", categoryRoutes);
 
 app.listen(port, () => console.log(`Server running on port: ${port}`));
